@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv('data/data.csv')
+df = pd.read_csv('C:/Users/TUAN_ANH/Desktop/abc/app/data/data.csv')
 
 
 #category - product
