@@ -1,8 +1,9 @@
 import db
 
 def csv(data):
-    x = data.to_frame()
-    x.reset_index(inplace=True)
-    return x
+
+
+    return data
+
 
 csv(db.get_top_country).to_csv('top_country.csv')
