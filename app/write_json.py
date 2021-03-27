@@ -28,3 +28,4 @@ with open("C:/Users/TUAN_ANH/Desktop/abc/app/data/top_product.json", "w") as out
 
 with open("C:/Users/TUAN_ANH/Desktop/abc/app/data/top_store.json", "w") as outfile:
     outfile.write(convert(db.get_top_store))
+
