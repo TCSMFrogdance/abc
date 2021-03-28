@@ -1,0 +1,83 @@
+{
+    "Category": "CATEGORY", "children": [{
+        "Category": "Baby Clothes",
+        "children": [{"Product": "Aino Shoes", "Sales": 193976.60975991978},
+                    {"Product": "Baby Dark Lounge Suit", "Sales": 136737.96322243},
+                    {"Product": "Deuce Shirt", "Sales": 122329.69458163998},
+                    {"Product": "Duck Shirt", "Sales": 81485.52358136},
+                    {"Product": "Duck Trousers", "Sales": 180364.12119491995},
+                    {"Product": "Mehmet-Napp", "Sales": 2911.4603658699994},
+                    {"Product": "Mehmet-Skor", "Sales": 4632.772694189999},
+                    {"Product": "Mehmet-Tröja", "Sales": 54573.710916129996},
+                    {"Product": "Onesy Dress", "Sales": 212594.9721038001},
+                    {"Product": "Rodbye Troje", "Sales": 55135.31345894998},
+                    {"Product": "Sapporoo Gloves", "Sales": 43160.47589799002}]
+    },{
+      "Category": "Children's Clothes",
+        "children": [{"Product": "Kool Sunglasses", "Sales": 108198.24338579997},
+                     {"product": "RDL Suit", "Sales": 256005.3765577699},
+                     {"Product": "Runner Shoes", "Sales": 260173.0630465001},
+                     {"Product": "X-Train Shoes", "Sales": 75244.1508637}]
+    },{
+        "Category": "Men's Clothes",
+        "children": [{"product": "Atles Lussekofta", "Sales": 277259.1989633302},
+                     {"product": "Bow tie", "Sales": 84936.09294553002},
+                     {"product": "Desperado Jeans", "Sales": 163965.85310859996},
+                     {"product": "Lenin Jeansshorts", "Sales": 139303.21380189},
+                     {"product": "O-Man Underwear", "Sales": 14520.252312529994},
+                     {"product": "Rossi Bermuda Shorts", "Sales":101815.10445727801},
+                     {"product": "Samba Soccer Socks", "Sales": 45676.27796543994},
+                     {"product": "US-Master Jeans", "Sales": 195369.56727939998},
+                     {"product": "Danske Treshoe", "Sales": 40896.62407689},
+                     {"product": "Davenport Shoes", "Sales": 810996.4200789003},
+                     {"product": "Fuji Boots", "Sales": 34894.06851540002},
+                     {"product": "Lundenhagen Boots", "Sales": 109317.29603089998},
+                     {"product": "Root Boot", "Sales": 36285.5651614},
+                     {"product": "Summit Hiking Boots", "Sales": 773308.5103768},
+                     {"product": "TieBreak Tennis shoes", "Sales": 206585.4045397901}]
+    },{
+        "Category": "Men's Footwear",
+        "children": [{"product": "Danske Treshoe", "Sales": 40896.62407689},
+            {"product": "Davenport Shoes", "Sales": 810996.4200789003},
+            {"product": "Fuji Boots", "Sales": 34894.06851540002},
+            {"product": "Lundenhagen Boots", "Sales": 109317.29603089998},
+            {"product": "Root Boot", "Sales": 36285.5651614},
+            {"product": "Summit Hiking Boots", "Sales": 773308.5103768},
+            {"product": "TieBreak Tennis shoes", "Sales": 206585.4045397901}]
+    },{
+        "Category": "Swimwear",
+        "children": [{"Product": "Baywatch Swimsuit", "Sales": 34845.37021170998},
+            {"Product": "innish Swimsuit", "Sales": 32680.509839499995},
+            {"Product": "LA. Shorts", "Sales": 46445.14720951004},
+            {"Product": "Riviera Swimsuit", "Sales": 50260.246943759994},
+            {"Product": "Summer Shorts", "Sales": 60190.72801675001},
+            {"Product": "Tank Swimsuit", "Sales": 29916.221207610004}]
+    },{
+        "Category": "Women's Clothes",
+          "children": [{"Product": "Chantell Shirt", "Sales": 65328.84896628999},
+            {"Product": "Halter Dress", "Sales": 3237920.1880098986},
+            {"Product": "Jack Flash Dress", "Sales": 385585.11271720985},
+            {"Product": "Langoste Shirt", "Sales": 37763.425591729996},
+            {"Product": "Le Baby Dress", "Sales": 415325.4510793001},
+            {"Product": "Minnki Pälsii", "Sales": 98585.50234370002},
+            {"Product": "Okkaba Skin Jackets", "Sales": 388433.3093758001},
+            {"Product": "Oyaki Kimono", "Sales": 82619.84797107},
+            {"Product": "Rossi Shorts", "Sales": 70195.35349937},
+            {"Product": "Serve-Shirt", "Sales": 79253.9887579},
+            {"Product": "Shagall Socks", "Sales": 11042.642591169999},
+            {"Product": "Stretch Pants", "Sales": 63372.83794066998},
+            {"Product": "Sumi Underwear", "Sales": 6497.46401524},
+            {"Product": "Terence Top", "Sales": 396556.5494097001},
+            {"Product": "Tuxedo Top", "Sales": 61939.363686450015},
+            {"Product": "Wrap Skirt", "Sales": 89018.68563378004}]
+      },{
+        "Category": "Women's Footwear",
+        "children": [{"Product": "DSW Sandals", "Sales": 46619.332197450014},
+            {"Product": "Lightweight Sandals", "Sales": 74056.49227566997},
+            {"Product": "Ravellis Träskor", "Sales": 10831.193630090003},
+            {"Product": "Slip-on Shoes", "Sales": 21981.62780984055},
+            {"Product": "WFS Shoes", "Sales": 218273.9057197599},
+            {"Product": "Walking Shoes", "Sales": 84062.84612742999},
+            {"Product": "Winter Boots", "Sales": 346182.5036540997}]
+    }]
+}
