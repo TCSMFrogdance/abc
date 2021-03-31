@@ -16,10 +16,10 @@
         
       var svg = d3.select("#my_dataviz")
         .append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
+          .attr("width", width + margin.left + margin.right)
+          .attr("height", height + margin.top + margin.bottom)
         .append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+          .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
         
         d3.csv("https://raw.githubusercontent.com/TCSMFrogdance/abc/main/app/data/top_country.csv", function(data) {
         
@@ -48,15 +48,16 @@
           .data(data)
           .enter()
           .append("rect")
-          .attr("x", function(d) { return x(d.Country); })
-          .attr("y", function(d) { return y(d.Sales); })
-          .attr("width", x.bandwidth())
-          .attr("height", function(d) { return height - y(d.Sales); })
-          .attr("fill", "#69b3a2")
+            .attr("x", function(d) { return x(d.Country); })
+            .attr("y", function(d) { return y(d.Sales); })
+            .attr("width", x.bandwidth())
+            .attr("height", function(d) { return height - y(d.Sales); })
+            .attr("fill", "#69b3a2")
   
       })
   
-      const tooltip = d3.select('body').append('div')
+      const tooltip = d3.select('body')
+      .append('div')
         .attr('class', 'tooltip')
         .style('opacity', 0);
   
