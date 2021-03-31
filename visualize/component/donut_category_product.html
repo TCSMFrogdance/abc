@@ -12,7 +12,10 @@ function (data) {
     var width = 500;
     var height = 500;
     var radius = Math.min(width, height) / 2;
-    var color = d3.scaleOrdinal(d3.schemeCategory20c);
+    var color_product = d3.scaleOrdinal(d3.schemeCategory20c);
+    var color_category = d3.scaleOrdinal()
+        .domain(["Baby Clothes", "Children's Clothes", "Men's Clothes", "Men's Footwear", "Sportswear", "Swimwear", "Women's Clothes", "Women's Footwear"])
+        .range(d3.schemeDark2);
 
     var g = d3.select('svg')
         .attr('width', width)
