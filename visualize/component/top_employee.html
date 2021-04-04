@@ -57,10 +57,10 @@
                 .enter()
                 .append("rect")
                 .attr("x", function(d) { return x(d.SalesPersonName); })
-                .attr("y", function(d) { return y(d.Sales); })
                 .attr("width", x.bandwidth())
-                .attr("height", function(d) { return height - y(d.Sales); })
                 .attr("fill", "#69b3a2")
+                .attr("height", function(d) { return height - y(0); })
+                .attr("y", function(d) { return y(0); })
                 .on("mousemove", function(d){
                     tooltip
                     .style("left", d3.event.pageX - 50 + "px")
@@ -69,6 +69,12 @@
                     .html((d.SalesPersonName) + "<br>" + "$" + (d.Sales));
                 })
                 .on("mouseout", function(d){ tooltip.style("display", "none");});
+                svg.selectAll("rect")
+                    .transition()
+                    .duration(800)
+                    .attr("y", function(d) { return y(d.Sales); })
+                    .attr("height", function(d) { return height - y(d.Sales); })
+                    .delay(function(d,i){return(i*200)})
         })
     </script>
   </body>
