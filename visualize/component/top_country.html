@@ -72,7 +72,7 @@
                         .html((d.Country) + "<br>" + "$" + (d.Sales));
                         
                     })
-                    .on("mouseout", function(d){ tooltip.style("display", "none");});
+                    .on("mouseout", function(){ tooltip.style("display", "none");});
                 svg.selectAll("rect")
                     .transition()
                     .duration(800)
