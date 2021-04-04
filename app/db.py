@@ -38,3 +38,4 @@ get_sales_by_date = get_sales_by_date.groupby(['SalesDate'])['Sales'].sum()
 #store
 get_top_store = df[['Store', 'Sales']].copy()
 get_top_store = get_top_store.groupby(['Store'])['Sales'].sum()
+
