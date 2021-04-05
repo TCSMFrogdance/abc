@@ -7,7 +7,7 @@ def csv(data):
 csv(db.get_top_country.map('{:.2f}'.format).to_frame()).to_csv('top_country.csv')
 
 csv(db.get_top_employee.map('{:.2f}'.format).to_frame()).to_csv('top_employee.csv')
-
+csv(db.get_sales_by_date.map('{:.2f}'.format).to_frame()).to_csv('sale_by_date.csv')
 #x = csv(db.get_top_store).to_frame()
 #x['Region'] = db.df['Region', 'Store'].copy().groupby(['Store'])
 #x['Latitude'] = db.df['Latitude', 'Store'].copy().groupby(['Store'])
