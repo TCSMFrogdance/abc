@@ -1,0 +1,11 @@
+.toolTip {
+    position: absolute;
+    display: none;
+    min-width: 80px;
+    height: auto;
+    background: none repeat scroll 0 0 #00fff2c0;
+    border: 1px solid #6F257F;
+    padding: 14px;
+    text-align: center;
+    color: black;
+}

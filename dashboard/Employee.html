@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<!-- head -->
+    <head>
+        <meta charset="utf-8">
+        <title>Doanh số bán hàng công ty ABC</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="C:\Users\TUAN_ANH\Desktop\dashboard\css\index.css">
+        <link rel="stylesheet" type="text/css" href="C:\Users\TUAN_ANH\Desktop\dashboard\css\chart.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://d3js.org/d3.v4.js"></script>
+        <script>
+            function myFunction() {
+                var element = document.body;
+                element.classList.toggle("dark-mode");
+            }
+        </script>
+    <body>
+        <!-- header -->
+        <div class="card">
+            <div class="header">
+                <h2>Doanh số bán hàng công ty ABC</h2>
+            </div>
+        </div>
+
+        <!-- main/dashboard -->
+        <div class="row">
+            <div class="leftcolumn">
+                <div class="card">
+                    <!-- menu/topnav -->
+                    <!-- Load an icon library -->
+                    <div class="navbar">
+                        <a href="C:\Users\TUAN_ANH\Desktop\dashboard\index.html"><i class="fa fa-usd"></i> Overview</a>
+                        <a href=""><i class="fa fa-usd"></i> Sales</a>
+                        <a href=""><i class="fa fa-user-circle"></i> Customers</a>
+                        <a href=""><i class="fa fa-shopping-bag"></i> Category</a>
+                        <a href=""><i class="fa fa-fw fa-home"></i> Store</a>
+                        <a class="active" href="C:\Users\TUAN_ANH\Desktop\dashboard\Employee.html"><i class="fa fa-fw fa-user"></i> Employee</a>
+                        <button onclick="myFunction()">dark_mode</button>
+                    </div> 
+        
+                </div>
+                <div class="card">
+                    <div class="fakeimg" style="height:500px;">
+                    <div id="my_line"></div>
+                    <script>
+                    var margin = {top: 10, right: 50, bottom: 30, left: 60};    
+                    var trend = d3.select("#my_line")
+                      .append("svg")
+                        .attr("width", 900 )
+                        .attr("height", 500 )
+                      .append("g")
+                        .attr("transform",
+                              "translate(" + margin.left + "," + margin.top + ")");
+                    var tooltip = d3.select("body").append("div").attr("class", "toolTip");
+                    d3.csv("https://raw.githubusercontent.com/vansyK15DS/ABC_company/main/Sales_by_month.csv",
+                        function(data) {
+                            var x = d3.scaleBand()
+                            .range([ 0, 800 ])
+                            .domain(data.map(function(d) { return d.SalesDate; }))
+                            .padding(1);
+                            trend.append("g")
+                            .attr("transform", "translate(0," + 400 + ")")
+                            .call(d3.axisBottom(x));
+                        
+                            var y = d3.scaleLinear()
+                            .domain([0, d3.max(data, function(d) { return +d.Sales; })])
+                            .range([ 400, 0 ]);
+                            trend.append("g")
+                            .call(d3.axisLeft(y));
+                        
+                            trend.append("path")
+                            .datum(data)
+                            .attr("fill", "none")
+                            .attr("stroke", "#ffab00")
+                            .attr("stroke-width", 3)
+                            .attr("d", d3.line()
+                                .x(function(d) { return x(d.SalesDate) })
+                                .y(function(d) { return y(d.Sales) })
+                                )
+                            trend.selectAll(".dot")
+                                .data(data)
+                                .enter().append("circle")
+                                // .attr("class", "dot")
+                                .attr("cx", function(d, i) { return x(d.SalesDate) })
+                                .attr("cy", function(d) { return y(d.Sales)})
+                                .attr("r", 4)
+                                .on("mousemove", function(d){
+                                    tooltip
+                                    .style("left", d3.event.pageX - 50 + "px")
+                                    .style("top", d3.event.pageY - 70 + "px")
+                                    .style("display", "inline-block")
+                                    .html("month: " + (d.SalesDate) + "<br>" + "$" + (d.Sales));
+                                    })
+                                .on("mouseout", function(){ tooltip.style("display", "none");});
+                        })
+                    </script>
+                    </div>
+                </div>
+                </div>
+                <div class="rightcolumn">
+                <div class="row">
+                    <div class="card">
+                        <div id="my_donut"></div>
+                        <script>
+                            d3.json("https://raw.githubusercontent.com/TCSMFrogdance/abc/main/visualize/component/data/sunburst_data.json",
+                            function (data) {
+                                var radius = Math.min(300, 300) / 2;
+                                var color = d3.scaleOrdinal(d3.schemeCategory20c);
+                                var tooltip = d3.select("body").append("div").attr("class", "toolTip");
+                                var donut = d3.select("#my_donut")
+                                    .append('svg')
+                                        .attr('width', 300)
+                                        .attr('height', 300)
+                                    .append('g')
+                                    .attr('transform', 'translate(' + 300 / 2 + ',' + 300 / 2 + ')');
+
+                                var partition = d3.partition()
+                                    .size([2 * Math.PI, radius]);
+
+                                var root = d3.hierarchy(data)
+                                    .sum(function (d) { return d.Sales});
+
+                                partition(root);
+                                var arc = d3.arc()
+                                    .startAngle(function (d) { return d.x0 })
+                                    .endAngle(function (d) { return d.x1 })
+                                    .innerRadius(function (d) { return d.y0 })
+                                    .outerRadius(function (d) { return d.y1 });
+
+                                donut.selectAll('path')
+                                    .data(root.descendants())
+                                    .enter().append('path')
+                                    .attr("display", function (d) { return d.depth ? null : "none"; })
+                                    .attr("d", arc)
+                                    .style('stroke', '#fff')
+                                    .style("fill", function (d) { return color((d.children ? d : d.parent).data.Category); })
+                                    .on("mousemove", function(d){
+                                        tooltip
+                                        .style("left", d3.event.pageX - 50 + "px")
+                                        .style("top", d3.event.pageY - 70 + "px")
+                                        .style("display", "inline-block")
+                                        .html("category: " + (d.data.Category));
+                                    })
+                            })
+                        </script>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="card">
+                            <div id="rank_country"></div>
+                            <!-- rank top country -->
+                            <script>
+                                var margin = {top: 30, right: 30, bottom: 70, left: 60},
+                                    width = 500 - margin.left - margin.right,
+                                    height = 300 - margin.top - margin.bottom;
+                                    
+                                var top_employ = d3.select("#rank_country")
+                                    .append("svg")
+                                    .attr("width", width + margin.left + margin.right)
+                                    .attr("height", height + margin.top + margin.bottom)
+                                    .append("g")
+                                    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+                                var tooltip = d3.select("body").append("div").attr("class", "toolTip");
+                                d3.csv("https://raw.githubusercontent.com/TCSMFrogdance/abc/main/app/data/top_employee.csv", function(data) {
+                                    
+                                    data.sort(function(b, a) {
+                                    return a.Sales - b.Sales;
+                                    });
+                                    
+                                    var x = d3.scaleBand()
+                                        .range([ 0, width ])
+                                        .domain(data.map(function(d) { return d.SalesPersonName; }))
+                                        .padding(0.2);
+                                    top_employ.append("g")
+                                        .attr("transform", "translate(0," + height + ")")
+                                        .call(d3.axisBottom(x))
+                                        .selectAll("text")
+                                        .attr("transform", "translate(-10,0)rotate(-45)")
+                                        .style("text-anchor", "end");
+                                    
+                                    var y = d3.scaleLinear()
+                                        .domain([0, 5000000])
+                                        .range([ height, 0]);
+                                    top_employ.append("g")
+                                        .call(d3.axisLeft(y));
+                                    
+                                    top_employ.selectAll("mybar")
+                                        .data(data)
+                                        .enter()
+                                        .append("rect")
+                                        .attr("x", function(d) { return x(d.SalesPersonName); })
+                                        .attr("width", x.bandwidth())
+                                        .attr("fill", "#69b3a2")
+                                        .attr("height", function(d) { return height - y(0); })
+                                        .attr("y", function(d) { return y(0); })
+                                        .on("mousemove", function(d){
+                                            tooltip
+                                            .style("left", d3.event.pageX - 50 + "px")
+                                            .style("top", d3.event.pageY - 70 + "px")
+                                            .style("display", "inline-block")
+                                            .html((d.SalesPersonName) + "<br>" + "$" + (d.Sales));
+                                            
+                                        })
+                                        .on("mouseout", function(){ tooltip.style("display", "none");});
+                                    top_employ.selectAll("rect")
+                                        .transition()
+                                        .duration(800)
+                                        .attr("y", function(d) { return y(d.Sales); })
+                                        .attr("height", function(d) { return height - y(d.Sales); })
+                                        .delay(function(d,i){return(i*200)})
+                                })
+                            </script>
+                    </div>
+                </div>
+            </div>
+          </div>
+
+        <!-- footer -->
+        <div class="card">
+            <div class="footer">
+                <h3>tuan anh & van sy</h3>
+            </div>
+        </div>
+
+    </body>
+</html>
