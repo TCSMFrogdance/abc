@@ -1,0 +1,47 @@
+
+{% load static %}
+<link rel="stylesheet" type="text/css", href="{% static 'css/menuDashboard.css' %}"/>
+
+<button class="tablink" onclick="openPage('Overview', this, 'green')" id="defaultOpen">Overview</button>
+<button class="tablink" onclick="openPage('Customers', this, 'green')">Customers</button>
+<button class="tablink" onclick="openPage('Employees', this, 'green')">Employees</button>
+<button class="tablink" onclick="openPage('Stores', this, 'green')">Stores</button>
+<button class="tablink" onclick="openPage('Products', this, 'green')">Products</button>
+
+<div id="Overview" class="tabcontent">
+    {% include 'Overview.html' %}
+</div>
+
+<div id="Customers" class="tabcontent">
+    {% include 'Customers.html' %}
+</div>
+
+<div id="Employees" class="tabcontent">
+    {% include 'Employees.html' %}
+</div>
+
+<div id="Stores" class="tabcontent">
+    {% include 'Stores.html' %}
+</div>
+<div id="Products" class="tabcontent">
+    {% include 'Products.html' %}
+</div>
+
+<script>
+function openPage(pageName,elmnt,color) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(pageName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>

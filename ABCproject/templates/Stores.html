@@ -1,0 +1,13 @@
+{% load static %}
+<script src="{% static 'js/d3.min.js' %}"></script>
+<script>
+    //khai bao bien
+    let path = 'http://127.0.0.1:8000/dashboard/topstores/';
+    let title = 'top store';
+    let xlabel = 'store';
+    // let idsvg = 'topstore';
+    let idslsvg = '#topstore';
+    let keylabel = 'Store';
+</script>
+<svg width="960" height="500" id=topstore></svg>
+<script src="{% static 'js/rankchart.js' %}"></script>
