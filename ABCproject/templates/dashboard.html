@@ -1,13 +1,19 @@
-{% extends 'base.html' %}
-
-{% block title %} Dashboard {% endblock %}
-
-{% block content %}
-    <h1>Doanh số bán hàng công ty ABC</h1>
-    <div class="menu">
-        {% include 'herNavBar.html' %}
+{% extends 'base.html' %} {% block title %} Dashboard {% endblock %} {% block content %}
+<h1>Doanh số bán hàng công ty ABC</h1>
+<div class="menu">
+    {% include 'herNavBar.html' %}
+</div>
+<div class="dashBoard" style="background-color:#aaa;">
+    <div class="row">
+        <!-- left col -->
+        <div class="columnLeft">
+            <p>left col</p>
+        </div>
+        <!-- right col -->
+        <div class="columnRight">
+            <p>right col</p>
+            <svg width="500" height="350" id='rankchart'></svg>
+        </div>
     </div>
-
-    
-
+</div>
 {% endblock %}
