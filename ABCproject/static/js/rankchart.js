@@ -7,13 +7,13 @@
 
 
 // render herizontal rank chart
-const renderHerRankChart = data => {
-    const titleText = title;
-    const xAxisLabelText = xlabel;
-    const svg = d3.select(idsvg);
+let renderHerRankChart = data => {
+    var titleText = title;
+    var xAxisLabelText = xlabel;
+    var svg = d3.select(idsvg);
 
-    const width = +svg.attr('width');
-    const height = +svg.attr('height');
+    var width = +svg.attr('width');
+    var height = +svg.attr('height');
 
     svg.selectAll('*').remove();
 
@@ -21,29 +21,29 @@ const renderHerRankChart = data => {
         return a.Sales - b.Sales;
     });
 
-    const xValue = d => d['Sales'];
-    const yValue = d => d[keylabel];
-    const margin = { top: 30, right: 10, bottom: 40, left: 120 };
-    const innerWidth = width - margin.left - margin.right;
-    const innerHeight = height - margin.top - margin.bottom;
+    var xValue = d => d['Sales'];
+    var yValue = d => d[keylabel];
+    var margin = { top: 30, right: 10, bottom: 40, left: 120 };
+    var innerWidth = width - margin.left - margin.right;
+    var innerHeight = height - margin.top - margin.bottom;
 
-    const xScale = d3.scaleLinear()
+    var xScale = d3.scaleLinear()
         .domain([0, d3.max(data, xValue)])
         .range([0, innerWidth]);
 
-    const yScale = d3.scaleBand()
+    var yScale = d3.scaleBand()
         .domain(data.map(yValue))
         .range([0, innerHeight])
         .padding(0.1);
 
-    const g = svg.append('g')
+    var g = svg.append('g')
         .attr('transform', `translate(${margin.left},${margin.top})`);
 
-    const xAxisTickFormat = number =>
+    var xAxisTickFormat = number =>
         d3.format('.3s')(number)
         .replace('G', 'B');
 
-    const xAxis = d3.axisBottom(xScale)
+    var xAxis = d3.axisBottom(xScale)
         .tickFormat(xAxisTickFormat)
         .tickSize(-innerHeight);
 
@@ -53,7 +53,7 @@ const renderHerRankChart = data => {
         .selectAll('.domain, .tick line')
         .remove();
 
-    const xAxisG = g.append('g').call(xAxis)
+    var xAxisG = g.append('g').call(xAxis)
         .attr('transform', `translate(0,${innerHeight})`)
         .remove();
 
@@ -72,6 +72,7 @@ const renderHerRankChart = data => {
         .attr('width', d => xScale(xValue(d)))
         .attr('height', yScale.bandwidth())
         .attr("fill", "#69b3a2");
+        
 
     g.append('text')
         .attr('class', 'title')

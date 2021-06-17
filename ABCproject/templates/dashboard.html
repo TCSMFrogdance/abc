@@ -4,15 +4,19 @@
     {% include 'herNavBar.html' %}
 </div>
 <div class="dashBoard" style="background-color:#aaa;">
+    <div id="tooltip" class="hidden">
+        <p><span id="value"></p>
+    </div>
     <div class="row">
         <!-- left col -->
         <div class="columnLeft">
             <p>left col</p>
+            <svg width="600" height="500" id='chart1'></svg>
         </div>
         <!-- right col -->
         <div class="columnRight">
             <p>right col</p>
-            <svg width="500" height="350" id='rankchart'></svg>
+            <svg width="500" height="350" id='chart2'></svg>
         </div>
     </div>
 </div>
