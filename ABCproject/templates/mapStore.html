@@ -1,5 +1,5 @@
-<link rel="stylesheet" type="text/css" , href="C:\Users\TUAN_ANH\Desktop\ABCproject\static\css\tooltips.css" />
-<script src="C:\Users\TUAN_ANH\Desktop\ABCproject\static\js\d3.v4.js"></script>
+<link rel="stylesheet" type="text/css" , href="..\static\css\tooltips.css" />
+<script src="..\static\js\d3.v4.js"></script>
 <div id="tooltip" class="hidden">
     <p><span id="value"></p>
 </div>
@@ -109,6 +109,9 @@
                 .on('mouseover', function(d) {
                     d3.select(this).classed("highlight",true);
                     drawTooltipStore(d);})
-                .on('mouseout',mouseout);
+                .on('mouseout',mouseout)
+                .on('click', function(d){
+                    alert((d.Store) + ": " + (d.Sales/1000000).toFixed(2) + "M $");
+                });
     });
 </script>

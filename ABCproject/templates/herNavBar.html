@@ -1,8 +1,8 @@
  {% load static %}
 <link rel="stylesheet" type="text/css" , href="{% static 'css/menuDashboard.css' %}" />
-<script src="{% static 'js/d3.min.js' %}"></script>
+<script src="{% static 'js/d3.v4.js' %}"></script>
 <script src="{% static 'js/rankchart.js' %}"></script>
-<script src="{% static 'js/mapStore.js' %}"></script>
+<script src="{% static 'js/singmap.js' %}"></script>
 
 <button class="tablink" onclick="chooseTab(Overview, this, 'green')" id="defaultOpen">Overview</button>
 <button class="tablink" onclick="chooseTab(Customers, this, 'green')">Customers</button>
@@ -11,7 +11,7 @@
 <button class="tablink" onclick="chooseTab(Products, this, 'green')">Products</button>
 
 <script>
-    let path = '';
+    let path1 = '';
     let title = '';
     let xlabel = '';
     let idsvg = '';
@@ -42,24 +42,28 @@
 
     function Employees() {
         console.log('Employees tab');
-        path = 'http://127.0.0.1:8000/dashboard/topemployees/';
+        //rank chart
+        path1 = 'http://127.0.0.1:8000/dashboard/topemployees/';
         title = 'top employee';
         xlabel = 'employee';
-        idsvg = '#chart2';
+        idsvg2 = '#chart2';
         keylabel = 'SalesPersonName';
-        rankChart(path);
+        rankChart(path1);
     }
 
     function Stores() {
         console.log('Stores tab');
-        path = 'http://127.0.0.1:8000/dashboard/topstores/';
+        //rank chart
+        path1 = 'http://127.0.0.1:8000/dashboard/topstores/';
         title = 'top store';
         xlabel = 'store';
-        idsvg = '#chart2';
+        idsvg2 = '#chart2'
         keylabel = 'Store';
-        rankChart(path);
+        rankChart(path1);
+        //store chart
+        idsvg1 = '#chart1';
+        singapore_map(idsvg1);
         console.log("C:/Users/TUAN_ANH/Desktop/ABCproject/templates/mapStore.html");
-        mapStore();
     }
 
     function Products() {

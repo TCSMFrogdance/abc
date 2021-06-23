@@ -17,9 +17,6 @@
     pointer-events: none;
 }
 
-#tooltip.hidden {
-    display: none;
-}
 
 path.area {
     stroke-width: 0.3;
