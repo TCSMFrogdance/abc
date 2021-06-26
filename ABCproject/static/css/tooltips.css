@@ -17,13 +17,3 @@
     pointer-events: none;
 }
 
-
-path.area {
-    stroke-width: 0.3;
-    fill: #ffffbf;
-    stroke: black;
-}
-
-path.area.highlight {
-    fill: #78c679;
-}

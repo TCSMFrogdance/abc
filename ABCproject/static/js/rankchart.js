@@ -2,7 +2,7 @@
 // path: string link api
 // title: string
 // xlabel: string
-// idslsvg: string id
+// idslsvg2: string id
 // keylabel: string
 
 
@@ -10,7 +10,7 @@
 let renderHerRankChart = data => {
     var titleText = title;
     var xAxisLabelText = xlabel;
-    var herRank = d3.select(idsvg);
+    var herRank = d3.select(idsvg2);
 
     var width = +herRank.attr('width');
     var height = +herRank.attr('height');
@@ -75,8 +75,7 @@ let renderHerRankChart = data => {
         .attr("fill", "#69b3a2")
         .on('mouseover', function(d) {
             d3.select(this)
-                .attr("stroke", "black", true)
-                .attr("stroke-width", "3px")
+                .attr("fill", "#93B5AD")
             d3.select("#tooltip")
                 .style("display", "inline")
                 .style("left", d3.event.pageX + 20 + "px")
@@ -85,7 +84,7 @@ let renderHerRankChart = data => {
                 .html((d.Sales/1000000).toFixed(2) + "M $");})
         .on('mouseout', function(){
             d3.select("#tooltip").style("display", "none"),
-            d3.select(this).attr("stroke",false)
+            d3.select(this).attr("fill", "#69b3a2");
         })
         
 

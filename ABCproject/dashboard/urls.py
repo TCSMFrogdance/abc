@@ -1,5 +1,5 @@
 from django.urls import path
-from dashboard.views import Dashboard, GetSalesCustomers, GetSalesEmployees, GetSalesProducts, GetSalesStores, GetSumSalesCustomers, GetSumSalesEmployees, GetSumSalesProducts, GetSumSalesStores, GetSumSales, IndexAPIView
+from dashboard.views import Dashboard, GetSalesCustomers, GetSalesEmployees, GetSalesProducts, GetSalesStores, GetSumSalesCustomers, GetSumSalesEmployees, GetSumSalesProducts, GetSumSalesStores, GetSales, IndexAPIView
 
 urlpatterns = [
     path('', Dashboard, name='dashboard'),
@@ -12,5 +12,5 @@ urlpatterns = [
     path('topemployees/', GetSumSalesEmployees, name='topemployees'),
     path('topproducts/', GetSumSalesProducts, name='topproducts'),
     path('topstores/', GetSumSalesStores, name='topstores'),
-    path('overview/', GetSumSales, name='overview'),
+    path('overview/', GetSales, name='overview'),
 ]
