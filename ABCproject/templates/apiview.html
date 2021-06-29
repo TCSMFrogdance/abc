@@ -1,15 +1,33 @@
-<h1>This is a api of dashboard app</h1>
+{% load static %}
+<title>Dashboard response</title>
+<link rel="icon" type="image/x-icon" href="{% static 'abc_icon.png' %}" />
 <h2>option return</h2>
 <nav>
     <ul>
+        <p>--main querry--</p>
         <li><a href="{% url 'customers' %}">customers</a></li>
         <li><a href="{% url 'employees' %}">employees</a></li>
         <li><a href="{% url 'products' %}">products</a></li>
         <li><a href="{% url 'stores' %}">stores</a></li>
         <li><a href="{% url 'topcustomers' %}">topcustomers</a></li>
+        <li><a href="{% url 'top10customers' %}">top10customers</a></li>
         <li><a href="{% url 'topemployees' %}">topemployees</a></li>
         <li><a href="{% url 'topproducts' %}">topproducts</a></li>
         <li><a href="{% url 'topstores' %}">topstores</a></li>
         <li><a href="{% url 'overview' %}">overview</a></li>
+        <p>--file json--</p>
+        <li><a href="{% url 'singPath' %}">singPath</a></li>
+        <li><a href="{% url 'worldPath' %}">worldPath</a></li>
+        <li><a href="{% url 'zoomable' %}">zoomable</a></li>
+        <p>--employee querry--</p>
+        <li><a href="{% url 'Erik Presley' %}">getSaleErik</a></li>
+        <li><a href="{% url 'Frank Roll' %}">getSaleFrank</a></li>
+        <li><a href="{% url 'Helen Brolin' %}">getSaleHelen</a></li>
+        <li><a href="{% url 'Ingrid Hendrix' %}">getSaleIngrid</a></li>
+        <li><a href="{% url 'Joan Callins' %}">getSaleJoan</a></li>
+        <li><a href="{% url 'Leif Shine' %}">getSaleLeif</a></li>
+        <li><a href="{% url 'Rob Carsson' %}">getSaleRob</a></li>
+        <li><a href="{% url 'Tom Lindwall' %}">getSaleTom</a></li>
+        <li><a href="{% url 'Lennart Skoglund' %}">getSaleLennart</a></li>
     </ul>
 </nav>

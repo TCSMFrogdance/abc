@@ -57,7 +57,7 @@ class Stores(models.Model):
 
 class Sales(models.Model):
     id = models.AutoField(db_column='ID', primary_key=True)  # Field name made lowercase.
-    salesdate = models.DateTimeField(db_column='SalesDate', blank=True, null=True)  # Field name made lowercase.
+    salesdate = models.TextField(db_column='SalesDate', blank=True, null=True)  # Field name made lowercase.
     orderid = models.SmallIntegerField(db_column='OrderID')  # Field name made lowercase.
     customerid = models.ForeignKey(Customers, models.DO_NOTHING, db_column='CustomerID', blank=True, null=True)  # Field name made lowercase.
     salespersonid = models.TextField(db_column='SalesPersonID', blank=True, null=True)  # Field name made lowercase. This field type is a guess.

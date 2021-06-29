@@ -3,6 +3,8 @@
 <script src="{% static 'js/d3.v4.js' %}"></script>
 <script src="{% static 'js/rankchart.js' %}"></script>
 <script src="{% static 'js/singmap.js' %}"></script>
+<script src="{% static 'js/linechart.js' %}"></script>
+<script src="{% static 'js/worldmap.js' %}"></script>
 
 <button class="tablink" onclick="chooseTab(Overview, this, 'green')" id="defaultOpen">Overview</button>
 <button class="tablink" onclick="chooseTab(Customers, this, 'green')">Customers</button>
@@ -11,13 +13,6 @@
 <button class="tablink" onclick="chooseTab(Products, this, 'green')">Products</button>
 
 <script>
-    let path1 = '';
-    let title = '';
-    let xlabel = '';
-    let idsvg1 = '';
-    let idsvg2 = '';
-    let keylabel = '';
-
     function chooseTab(tabName, elmnt, color) {
         var i, tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tabcontent");
@@ -34,47 +29,45 @@
 
     function Overview() {
         console.log('overview tab');
+        line("{% url 'overview' %}", '#chart2');
+        d3.select('#chart1').selectAll('*').remove();
         
     }
 
     function Customers() {
         console.log('Customers tab');
         //rank chart
-        path1 = "{% url 'topcustomers' %}";
-        title = 'top customer';
-        xlabel = 'customer';
-        idsvg2 = '#chart2';
-        keylabel = 'CustomerName';
-        rankChart(path1);
+        rankChart("{% url 'top10customers' %}", 'top customer', 'customer', '#chart2', 'CustomerName');
+        d3.select('#chart1').selectAll('*').remove();
+        world_map("{% url 'worldPath' %}", "{% url 'topcustomers' %}",  '#chart1');
     }
 
     function Employees() {
         console.log('Employees tab');
+        function rankClick(data){
+            if(data == 'Rob Carsson'){
+                console.log(data);
+            }
+        }
         //rank chart
-        path1 = "{% url 'topemployees' %}";
-        title = 'top employee';
-        xlabel = 'employee';
-        idsvg2 = '#chart2';
-        keylabel = 'SalesPersonName';
-        rankChart(path1);
+        rankChart("{% url 'topemployees' %}", 'top employee', 'employee', '#chart2', 'SalesPersonName');
+        d3.select('#chart1').selectAll('*').remove();
+        //store chart
+        
     }
 
     function Stores() {
         console.log('Stores tab');
         //rank chart
-        path1 = "{% url 'topstores' %}";
-        title = 'top store';
-        xlabel = 'store';
-        idsvg2 = '#chart2'
-        keylabel = 'Store';
-        rankChart(path1);
+        rankChart("{% url 'topstores' %}", 'top store', 'store', '#chart2', 'Store');
         //store chart
-        idsvg1 = '#chart1';
-        singapore_map(idsvg1);
+        singapore_map("{% url 'singPath' %}", "{% url 'topstores' %}",  '#chart1');
     }
 
     function Products() {
         console.log('Products tab');
+        d3.select('#chart1').selectAll('*').remove();
+        d3.select('#chart2').selectAll('*').remove();
     }
     // Get the element with id="defaultOpen" and click on it
     document.getElementById("defaultOpen").click();

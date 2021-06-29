@@ -4,12 +4,9 @@
 <div id="tooltip" class="hidden">
     <p><span id="value"></p>
 </div>
-<svg width="960" height="500" id='chart1' style="background-color: #deebf7;"></svg>
-<script>
-    let idsvg1 = '#chart1';
-</script>
+<svg width="500" height="350" id='chart1' style="background-color: #deebf7;"></svg>
 
 <script src='C:\Users\TUAN ANH\Desktop\ABCproject\static\js\linechart.js'></script>
 <script>
-    line(idsvg1);
+    line('http://127.0.0.1:8000/dashboard/overview/', '#chart1', 'total sale overtime');
 </script>

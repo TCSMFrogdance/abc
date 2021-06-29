@@ -3,8 +3,8 @@
 // idslsvg1: string id
 
 
-function singapore_map(idsvg){
-    var singMap = d3.select(idsvg1);
+function singapore_map(path1, path2, idsvg){
+    var singMap = d3.select(idsvg);
     singMap.selectAll('*').remove();
     var width = singMap.attr('width');
     var height = singMap.attr('height');
@@ -15,8 +15,8 @@ function singapore_map(idsvg){
     
 
     d3.queue()
-        .defer(d3.json, 'https://raw.githubusercontent.com/TCSMFrogdance/abc/main/singapore_map.json')
-        .defer(d3.json, 'http://127.0.0.1:8000/dashboard/topstores/')//{% url 'topstores' %}
+        .defer(d3.json, path1)
+        .defer(d3.json, path2)//{% url 'topstores' %}
         .await(render);
 
     function render(error, sg, data){
