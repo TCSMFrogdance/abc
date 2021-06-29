@@ -5,14 +5,8 @@
     <p><span id="value"></p>
 </div>
 <script src="C:\Users\TUAN ANH\Desktop\ABCproject\static\js\d3.v4.js"></script>
-<script>
-        path2 = 'http://127.0.0.1:8000/dashboard/topemployees/';
-        title = 'top employee';
-        xlabel = 'employee';
-        idsvg2 = '#chart2';
-        keylabel = 'SalesPersonName';
-</script>
+
 <script src='C:\Users\TUAN ANH\Desktop\ABCproject\static\js\rankchart.js'></script>
 <script>
-    rankChart(path2);
+    rankChart("http://127.0.0.1:8000/dashboard/topemployees/", 'top employee', 'employee', '#chart2', 'SalesPersonName');
 </script>

@@ -51,3 +51,12 @@ def get_sale(self):
                 GROUP BY strftime('%Y', SalesDate), strftime('%m', SalesDate)""")
         rows = cursor.fetchall()
     return rows
+
+def get_sale_employee(self, name):
+    with connection.cursor() as cursor:
+        cursor.execute("""SELECT Store, Latitude, Longitude, SUM(Sales) FROM Sales
+                    JOIN  Stores ON Sales.StoreID = Stores.StoreID JOIN Employees ON Sales.SalesPersonID = Employees.SalesPersonID
+                    WHERE SalesPersonName = '{}'
+                    GROUP BY Store""".format(name))
+        rows = cursor.fetchall()
+    return rows
