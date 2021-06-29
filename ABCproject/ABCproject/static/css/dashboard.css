@@ -1,0 +1,24 @@
+.menu {
+    border-top: solid;
+    border-width: medium;
+}
+
+.dashBoard {
+    border-top: solid;
+    border-width: medium;
+}
+
+.columnLeft {
+    float: left;
+}
+
+.columnRight {
+    float: left;
+    padding-left: 10px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}

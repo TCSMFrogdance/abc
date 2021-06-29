@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block title %} Dashboard {% endblock %} {% block content %}
+<h1>Doanh số bán hàng công ty ABC</h1>
+<div class="menu">
+    {% include 'herNavBar.html' %}
+</div>
+<div class="dashBoard">
+    <div id="tooltip" class="hidden">
+        <p><span id="value"></p>
+    </div>
+    <div class="row" style="padding-left: 10px;">
+        <!-- left col -->
+        <div class="columnLeft" style=" padding-top: 10px;">
+            <svg width="800" height="500" id='chart1' style="background-color: #c9c9c9; border-radius: 25px;"></svg>
+        </div>
+        <!-- right col -->
+        <div class="columnRight" style=" padding-top: 10px;">
+            <svg width="500" height="350" id='chart2' style="background-color: #c9c9c9; border-radius: 25px;"></svg>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,83 @@
+{
+    "name": "CATEGORY", "children": [{
+        "name": "Baby Clothes",
+        "children": [{"name": "Aino Shoes", "Sales": 193976.60975991978},
+                    {"name": "Baby Dark Lounge Suit", "Sales": 136737.96322243},
+                    {"name": "Deuce Shirt", "Sales": 122329.69458163998},
+                    {"name": "Duck Shirt", "Sales": 81485.52358136},
+                    {"name": "Duck Trousers", "Sales": 180364.12119491995},
+                    {"name": "Mehmet-Napp", "Sales": 2911.4603658699994},
+                    {"name": "Mehmet-Skor", "Sales": 4632.772694189999},
+                    {"name": "Mehmet-Tröja", "Sales": 54573.710916129996},
+                    {"name": "Onesy Dress", "Sales": 212594.9721038001},
+                    {"name": "Rodbye Troje", "Sales": 55135.31345894998},
+                    {"name": "Sapporoo Gloves", "Sales": 43160.47589799002}]
+    },{
+      "name": "Children's Clothes",
+        "children": [{"name": "Kool Sunglasses", "Sales": 108198.24338579997},
+                     {"name": "RDL Suit", "Sales": 256005.3765577699},
+                     {"name": "Runner Shoes", "Sales": 260173.0630465001},
+                     {"name": "X-Train Shoes", "Sales": 75244.1508637}]
+    },{
+        "name": "Men's Clothes",
+        "children": [{"name": "Atles Lussekofta", "Sales": 277259.1989633302},
+                     {"name": "Bow tie", "Sales": 84936.09294553002},
+                     {"name": "Desperado Jeans", "Sales": 163965.85310859996},
+                     {"name": "Lenin Jeansshorts", "Sales": 139303.21380189},
+                     {"name": "O-Man Underwear", "Sales": 14520.252312529994},
+                     {"name": "Rossi Bermuda Shorts", "Sales":101815.10445727801},
+                     {"name": "Samba Soccer Socks", "Sales": 45676.27796543994},
+                     {"name": "US-Master Jeans", "Sales": 195369.56727939998},
+                     {"name": "Danske Treshoe", "Sales": 40896.62407689},
+                     {"name": "Davenport Shoes", "Sales": 810996.4200789003},
+                     {"name": "Fuji Boots", "Sales": 34894.06851540002},
+                     {"name": "Lundenhagen Boots", "Sales": 109317.29603089998},
+                     {"name": "Root Boot", "Sales": 36285.5651614},
+                     {"name": "Summit Hiking Boots", "Sales": 773308.5103768},
+                     {"name": "TieBreak Tennis shoes", "Sales": 206585.4045397901}]
+    },{
+        "name": "Men's Footwear",
+        "children": [{"name": "Danske Treshoe", "Sales": 40896.62407689},
+            {"name": "Davenport Shoes", "Sales": 810996.4200789003},
+            {"name": "Fuji Boots", "Sales": 34894.06851540002},
+            {"name": "Lundenhagen Boots", "Sales": 109317.29603089998},
+            {"name": "Root Boot", "Sales": 36285.5651614},
+            {"name": "Summit Hiking Boots", "Sales": 773308.5103768},
+            {"name": "TieBreak Tennis shoes", "Sales": 206585.4045397901}]
+    },{
+        "name": "Swimwear",
+        "children": [{"name": "Baywatch Swimsuit", "Sales": 34845.37021170998},
+            {"name": "innish Swimsuit", "Sales": 32680.509839499995},
+            {"name": "LA. Shorts", "Sales": 46445.14720951004},
+            {"name": "Riviera Swimsuit", "Sales": 50260.246943759994},
+            {"name": "Summer Shorts", "Sales": 60190.72801675001},
+            {"name": "Tank Swimsuit", "Sales": 29916.221207610004}]
+    },{
+        "name": "Women's Clothes",
+          "children": [{"name": "Chantell Shirt", "Sales": 65328.84896628999},
+            {"name": "Halter Dress", "Sales": 3237920.1880098986},
+            {"name": "Jack Flash Dress", "Sales": 385585.11271720985},
+            {"name": "Langoste Shirt", "Sales": 37763.425591729996},
+            {"name": "Le Baby Dress", "Sales": 415325.4510793001},
+            {"name": "Minnki Pälsii", "Sales": 98585.50234370002},
+            {"name": "Okkaba Skin Jackets", "Sales": 388433.3093758001},
+            {"name": "Oyaki Kimono", "Sales": 82619.84797107},
+            {"name": "Rossi Shorts", "Sales": 70195.35349937},
+            {"name": "Serve-Shirt", "Sales": 79253.9887579},
+            {"name": "Shagall Socks", "Sales": 11042.642591169999},
+            {"name": "Stretch Pants", "Sales": 63372.83794066998},
+            {"name": "Sumi Underwear", "Sales": 6497.46401524},
+            {"name": "Terence Top", "Sales": 396556.5494097001},
+            {"name": "Tuxedo Top", "Sales": 61939.363686450015},
+            {"name": "Wrap Skirt", "Sales": 89018.68563378004}]
+      },{
+        "name": "Women's Footwear",
+        "children": [{"name": "DSW Sandals", "Sales": 46619.332197450014},
+            {"name": "Lightweight Sandals", "Sales": 74056.49227566997},
+            {"name": "Ravellis Träskor", "Sales": 10831.193630090003},
+            {"name": "Slip-on Shoes", "Sales": 21981.62780984055},
+            {"name": "WFS Shoes", "Sales": 218273.9057197599},
+            {"name": "Walking Shoes", "Sales": 84062.84612742999},
+            {"name": "Winter Boots", "Sales": 346182.5036540997}]
+    }]
+}

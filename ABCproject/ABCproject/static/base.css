@@ -1,0 +1,16 @@
+body {
+    background-color: #e6e6e6;
+    margin: 0px;
+}
+
+.verNavBar{
+    float: left;
+    width: 8%;
+    border-right: solid;
+    border-width: medium;
+}
+
+.content{
+    float: left;
+    width: 90%;
+}

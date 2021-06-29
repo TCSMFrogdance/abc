@@ -1,0 +1,12 @@
+<svg width="500" height="350" id='chart2'></svg>
+
+<link rel="stylesheet" type="text/css" , href="..\static\css\tooltips.css" />
+<div id="tooltip" class="hidden">
+    <p><span id="value"></p>
+</div>
+<script src="C:\Users\TUAN ANH\Desktop\ABCproject\static\js\d3.v4.js"></script>
+
+<script src='C:\Users\TUAN ANH\Desktop\ABCproject\static\js\rankchart.js'></script>
+<script>
+    rankChart("http://127.0.0.1:8000/dashboard/topemployees/", 'top employee', 'employee', '#chart2', 'SalesPersonName');
+</script>

@@ -37,8 +37,11 @@ def GetSumSales10Customers(request):
     return HttpResponse(context)
 
 def GetSumSalesCustomers(request):
-    context = select_sum_sales_priority('ABC.sqlite3', 'Customers', 'CustomerName', 'CustomerID')
-    context = pd.DataFrame(context, columns=['CustomerName', 'Sales']).to_json(orient='records')
+    context = select_sum_sales_priority('ABC.sqlite3', 'Customers', 'Country', 'CustomerID')
+    # country = ['Argentina', 'Canada', 'England', 'France', 'Germany', 'Italy', 'Norway', 'Poland', 'Spain', 'Sweden', 'Switzerland', 'USA']
+    # id = ['ARG', 'CAN', 'GBR', 'FRA', 'DEU', 'ITA', 'NOR', 'POL', 'ESP', 'SWE', 'CHL', 'USA']
+    # tmp = pd.DataFrame((country, id), columns=['Country', 'id'])
+    context = pd.DataFrame(context, columns=['Country', 'Sales']).to_json(orient='records')
     return HttpResponse(context)
 
 def GetSumSalesEmployees(request):
